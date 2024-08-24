@@ -7,7 +7,7 @@ class Airline(models.Model):
     founded_year = models.IntegerField()
     base_airport = models.CharField(max_length=100)
 
-class Airport(models.Model):
+class Aircraft(models.Model):
     manufacturer_serial_number = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
