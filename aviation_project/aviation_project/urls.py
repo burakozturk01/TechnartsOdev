@@ -17,7 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from api.views import CustomTOPView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
+    path('', include('api.urls')),
+    path('api-token-auth/', CustomTOPView.as_view(), name='token_obtain_pair'),
 ]
