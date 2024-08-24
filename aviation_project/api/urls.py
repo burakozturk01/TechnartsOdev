@@ -4,7 +4,7 @@ from .views import AirlineViewSet, AircraftViewSet
 
 
 router = DefaultRouter()
-router.register(r'airline', AirlineViewSet)
-router.register(r'aircraft', AircraftViewSet)
+router.register(r'airline', AirlineViewSet, basename='airline')
+router.register(r'aircraft', AircraftViewSet, basename='aircraft')
 
 urlpatterns = router.urls

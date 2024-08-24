@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, serializers
 
 from .models import Aircraft, Airline
 from .serializers import AircraftSerializer, AirlineSerializer, CustomTOPSerializer
@@ -13,11 +13,15 @@ class AirlineViewSet(viewsets.ModelViewSet):
 
     permission_classes = [IsAuthenticated]
 
+    url = serializers.HyperlinkedIdentityField(view_name='airline-detail')
+
 class AircraftViewSet(viewsets.ModelViewSet):
     queryset = Aircraft.objects.all()
     serializer_class = AircraftSerializer
 
     permission_classes = [IsAuthenticated]
+
+    url = serializers.HyperlinkedIdentityField(view_name='aircraft-detail')
 
 class CustomTOPView(TokenObtainPairView):
     serializer_class = CustomTOPSerializer
