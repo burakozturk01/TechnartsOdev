@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 class BaseViewSet:
-    permission_classes = []
+    permission_classes = [IsAuthenticated]
 
 class AirlineViewSet(BaseViewSet, viewsets.ModelViewSet):
     queryset = Airline.objects.prefetch_related('aircraft_set').all()
