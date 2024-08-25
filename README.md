@@ -1,5 +1,3 @@
-# Project Name
-
 ## Description
 
 This project is a Django REST Framework application that allows users to manage airlines and their associated planes. It provides endpoints for adding, updating, and listing airlines and planes. The project also includes JWT authentication to verify user login status.
